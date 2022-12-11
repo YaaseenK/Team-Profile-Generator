@@ -1,7 +1,10 @@
+// Generate team function which takes in the array of answers
 const genTeam = (team) => {
 
+  // array to store html elements
     const html = [];
 
+    // takes manager information and input to html
     const generateManager = manager => {
         
         let managerHTML = 
@@ -25,6 +28,8 @@ const genTeam = (team) => {
     html.push(managerHTML);
     };
 
+    // takes engineer information and input to html
+
     const genEngineer = engineer => {
         let engineerHTML =  `
         <div class="card" style="width: 18rem;">
@@ -47,6 +52,7 @@ const genTeam = (team) => {
     html.push(engineerHTML);
     };
 
+    // takes intern information and input to html
     const genIntern = intern => {
         let internHTML = `
         <div class="card" style="width: 18rem;">
@@ -87,7 +93,7 @@ const genTeam = (team) => {
 };
 
 
-
+// exports the html page
 module.exports = (team) => {
     return `
     <!DOCTYPE html>

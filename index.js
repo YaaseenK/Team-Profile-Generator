@@ -10,6 +10,8 @@ const Manager = require("./lib/Manager.js");
 
 // Array for answers to questions
 const StaffMembers = [];
+
+// Main menu function 
 const prompMenu = () => {
     return inquirer.prompt([
        {
@@ -38,8 +40,10 @@ const prompMenu = () => {
         }
     });
 }
+// calling menu function from line 15
 prompMenu()
 
+// Manager input questions function 
 const managerInputQuestions = () => { 
     return inquirer.prompt([
         {
@@ -111,6 +115,8 @@ const managerInputQuestions = () => {
       });
 }
 
+// Engineer input questions function 
+
 const inputEngineer = () => {
     return inquirer.prompt([
         {
@@ -175,6 +181,8 @@ const inputEngineer = () => {
         prompMenu();
     });
 };
+
+// Intern input questions function 
 
 const inputIntern = () => {
     return inquirer.prompt([
@@ -241,7 +249,7 @@ const inputIntern = () => {
     });
 };
 
-
+// Build teanm function to write the html file
 function buildTeam () {
     fs.writeFileSync('./dist/index.html' , genHTML(StaffMembers), "utf-8")
   }
